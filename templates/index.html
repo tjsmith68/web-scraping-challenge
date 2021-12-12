@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Explore Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission To Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Latest Mars Data</a></p>
+    </div>
+
+    <!-- Mars Data Row 1-->
+    <div class="row" id="display mars news">
+      <div class="col-md-12">
+        <h1 class="heading">Latest Mars News</h1>
+        <h4 class="heading">{{marsData.marsNewsTitle}}</h4>
+        <small>{{marsData.marsNewsP}}</small>
+      </div>
+    </div>
+
+     <!-- Mars Data Row 2-->
+     <div class="row" id="display mars feature pic and facts table">
+      <div class="col-md-7">
+        <h1 class="heading">Featured Mars Image</h1>
+        <a href='{{marsData.marsFeaturedImage}}'>
+          <picture>
+            <img src='{{marsData.marsFeaturedImage}}' class="img-fluid img-thumbnail" alt="Featured Mars Image">
+          </picture>
+        </a>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-4">
+        <h1 class="heading">Mars facts</h1>
+        {{marsData.marsFacts|safe}}
+      </div>
+    </div>
+
+     <!-- Mars Data Row 3-->
+     <div class="row" id="display mars hemisphere title">
+      <div class="col-md-12">
+        <center>
+          <h1 class="heading">Mars Hemispheres</h1>
+        </center> 
+      </div>
+    </div>
+
+     <!-- Mars Data Row 4-->
+     <div class="row" id="display mars hemisphere pics">
+      <div class="col-md-3">
+        <div class="card">
+          <a href="{{marsData.marsHemispheres[0].img_url}}">
+            <img src="{{marsData.marsHemispheres[0].img_url}}" class="img-thumbnail" alt="{{marsData.marsHemispheres[0].title}}">
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">{{marsData.marsHemispheres[0].title}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <a href="{{marsData.marsHemispheres[1].img_url}}">
+            <img src="{{marsData.marsHemispheres[1].img_url}}" class="img-thumbnail" alt="{{marsData.marsHemispheres[1].title}}">
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">{{marsData.marsHemispheres[1].title}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <a href="{{marsData.marsHemispheres[2].img_url}}">
+            <img src="{{marsData.marsHemispheres[2].img_url}}" class="img-thumbnail" alt="{{marsData.marsHemispheres[2].title}}">
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">{{marsData.marsHemispheres[2].title}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <a href="{{marsData.marsHemispheres[3].img_url}}">
+            <img src="{{marsData.marsHemispheres[3].img_url}}" class="img-thumbnail" alt="{{marsData.marsHemispheres[3].title}}">
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">{{marsData.marsHemispheres[3].title}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
